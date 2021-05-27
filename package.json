@@ -1,0 +1,34 @@
+{
+  "name": "t9project",
+  "version": "1.0.0",
+  "description": "Full Stack App to convert phone numbers to words",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd client && npm install && npm run start",
+    "server": "nodemon backend/server.js",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client \""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kovar95/T9Project.git"
+  },
+  "keywords": [
+    "t9",
+    "phonewords"
+  ],
+  "author": "kovar95",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kovar95/T9Project/issues"
+  },
+  "homepage": "https://github.com/kovar95/T9Project#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.11.1",
+    "wordlist-english": "^1.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0"
+  }
+}
