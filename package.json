@@ -4,7 +4,7 @@
   "description": "Full Stack App to convert phone numbers to words",
   "main": "index.js",
   "scripts": {
-    "client": "cd client && npm install && npm run start",
+    "client": "cd client && npm run start",
     "server": "nodemon backend/server.js",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client \""
   },
@@ -24,6 +24,8 @@
   "homepage": "https://github.com/kovar95/T9Project#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "combinatorics": "^0.1.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-validator": "^6.11.1",
     "wordlist-english": "^1.2.1"
