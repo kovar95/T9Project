@@ -7,6 +7,7 @@ const Keyboard = ({updateNumbers, data, getWords}) => {
 
   const enterControl = (enteredValue) => {
     let validator = /^[2-9]+$/;
+    
     if (String(enteredValue[0][0]).match(validator)) {
       updateNumbers(data + enteredValue[0][0])
     } 

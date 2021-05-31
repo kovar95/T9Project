@@ -13,7 +13,6 @@ import { connect } from 'react-redux';
 import * as actionCreators from '../store/ActionCreators';
 
 const Field = ({ data, alert, words: { realWords, allWords } }) => {
-
   return (
     <Container className="m-5">
       <Row>
@@ -23,7 +22,7 @@ const Field = ({ data, alert, words: { realWords, allWords } }) => {
               <FormGroup>
                 <Input
                   type="text"
-                  placeholder="Write your word"
+                  placeholder="Write your word --->"
                   value={data}
                   className="mb-1"
                 />
@@ -38,19 +37,27 @@ const Field = ({ data, alert, words: { realWords, allWords } }) => {
           </Row>
         </Col>
         <Col xs="6">
-          <h5 style={{textAlign:'left'}} className='p-1'>Total number of words: <strong className='bg-secondary text-light p-1 rounded'>{allWords.length}</strong></h5>
-          <h5 style={{textAlign:'left'}} className='p-1'>Number of real words: <strong className='bg-secondary text-light p-1 rounded'>{realWords.length}</strong></h5>
+          <h5 style={{ textAlign: 'left' }} className="p-1">
+            Total number of words:{' '}
+            <strong className="bg-secondary text-light p-1 rounded">
+              {allWords.length}
+            </strong>
+          </h5>
+          <h5 style={{ textAlign: 'left' }} className="p-1">
+            Number of real words:{' '}
+            <strong className="bg-secondary text-light p-1 rounded">
+              {realWords.length}
+            </strong>
+          </h5>
           <hr />
-            {alert && <Alert color="warning">{alert}</Alert>}
-            <Row>
+          {alert && <Alert color="warning">{alert}</Alert>}
+          <Row>
             {realWords.map((word) => (
               <Col key={word}>
-                <Button>
-                {word}
-                </Button>
-                </Col>
+                <Button>{word}</Button>
+              </Col>
             ))}
-            </Row>
+          </Row>
         </Col>
       </Row>
     </Container>

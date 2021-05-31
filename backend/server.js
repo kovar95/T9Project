@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.send('API Running');
+    res.status(200).send('API Running');
   });
 
 app.use('/api', singleEndpoint);

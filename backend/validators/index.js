@@ -16,8 +16,8 @@ exports.enteredNumbersValidator = [
       throw new Error('You must enter at least two numbers!');
     }
 
-    let numbers = /^[2-9]+$/;
-    if (!value.match(numbers)) {
+    let validator = /^[2-9]+$/;
+    if (!value.match(validator)) {
       throw new Error('You entered invalid value!');
     }
 

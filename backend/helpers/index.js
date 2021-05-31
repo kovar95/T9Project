@@ -55,10 +55,12 @@ const generateCombinations = (args) => {
   return r;
 };
 
-const findRealWords = arrayOfWords => {
-  let filterWords = arrayOfWords.filter(word => englishWords.indexOf(word.join('')) > -1)
-  return filterWords.map(r => r.join(''))
-}
+const findRealWords = (arrayOfWords) => {
+  let filterWords = arrayOfWords.filter(
+    (word) => englishWords.indexOf(word.join('')) > -1
+  );
+  return filterWords.map((r) => r.join(''));
+};
 
 exports.generate = (req, res) => {
   const phoneword = req.params.phoneword;
@@ -68,15 +70,12 @@ exports.generate = (req, res) => {
   // We can generate combinations via npm package also
   // const combinations = combinatorics.holistic(...transformedArray)
 
-  const realWords = findRealWords(combinations)
+  const realWords = findRealWords(combinations);
 
   let payload = {
     allWords: combinations,
-    realWords: realWords
-  }
+    realWords: realWords,
+  };
 
-  return res
-    .status(200)
-    .json(payload)
+  return res.status(200).json(payload);
 };
-
