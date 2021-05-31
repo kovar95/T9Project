@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react';
-import { Row, Col, Button } from 'reactstrap';
+import React from 'react';
 import { connect } from 'react-redux';
 import * as actionCreators from '../store/ActionCreators';
 
@@ -20,52 +19,35 @@ const Keyboard = ({updateNumbers, data, getWords}) => {
   }
 
   const keyboardSchema = [
-    [
       [[1], ['@']],
       [[2], ['ABC']],
       [[3], ['DEF']],
-    ],
-    [
       [[4], ['GHI']],
       [[5], ['JKL']],
       [[6], ['MNO']],
-    ],
-    [
       [[7], ['PQRS']],
       [[8], ['TUV']],
       [[9], ['WXYZ']],
-    ],
-    [
       [[], ['DELETE']],
       [[0], []],
-      [[], ['CLEAR']],
-    ],
+      [[], ['CLEAR']], 
   ];
 
   return (
-    <Fragment>
-      {keyboardSchema.map((row, rIndex) => (
-        <Row key={rIndex}>
-          {row.map((btn, btnIndex) => (
-            <Col xs="6" sm="4">
-              {' '}
-              <Button
-                className="secondary text-light m-1 p-2 key"
+    <div className='keyboard'>
+          {keyboardSchema.map((btn, btnIndex) => (
+              <button
                 style={{ fontSize: '20px' }}
-                key={`${rIndex}${btnIndex}`}
+                key={`${btnIndex}`}
                 onClick={() => enterControl(btn)}
               >
                 {btn[0]} <span style={{ fontSize: '12px' }}>{btn[1]}</span>
-              </Button>
-            </Col>
+              </button>
           ))}
-        </Row>
-      ))}
-     <Button color='outline-primary m-1' onClick={() => getWords()}>Find words</Button>
-    </Fragment>
+     <button className='submit' onClick={() => getWords()}>Find words</button>
+    </div>
   );
 };
-
 
 const mapStateToProps = (state) => ({
   data: state.data,

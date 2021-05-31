@@ -1,0 +1,132 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+header {
+  background-color: cornflowerblue;
+  padding: 10px;
+  font-size: 25px;
+  font-weight: 600;
+  color: white;
+  text-shadow: 1px 1px black;
+  margin: 10px;
+}
+button {
+  width: 100%;
+}
+
+button:hover {
+  background-color: red;
+}
+
+.main-div {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  .side-div {
+    width: 100%;
+    max-width: 350px;
+    margin: 10px;
+    .keyboard {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      button {
+        cursor: pointer;
+        width: 30%;
+        background-color: darkgray;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        padding: 5px;
+        margin: 3px;
+        border-radius: 5px;
+        &:hover {
+          background-color: #67696d;
+        }
+        &.submit {
+          width: 100%;
+          background-color: #1fa6c0;
+          &:hover {
+            background-color: #008eff;
+          }
+        }
+      }
+    }
+    textarea {
+      text-align: right;
+      width: 100%;
+      margin: 2px;
+      height: 70px;
+      border: 1px solid gray;
+      border-radius: 6px;
+      outline: none;
+    }
+    .word-heading {
+      text-align: left;
+      background-color: darkgray;
+      padding: 4px;
+      border-radius: 15px;
+      text-shadow: 1px 1px 1px white;
+      position: relative;
+      img {
+        width: 20px;
+        position: absolute;
+        right: 8px;
+        top: 6px;
+        border-radius: 50%;
+        cursor: pointer;
+        &:hover {
+          background-color: white;
+        }
+      }
+      ul {
+        position: absolute;
+        top: 39px;
+        list-style: none;
+        li {
+          background-color: beige;
+          padding: 3px;
+          border-radius: 15px;
+          border: 1px solid;
+          margin-bottom: 1px;
+        }
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
