@@ -1,132 +1,163 @@
-.App {
-  text-align: center;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App {
+  text-align: center;
+  background: linear-gradient(135deg, #03a9f4, #6eff00);
 }
 
 header {
-  background-color: cornflowerblue;
   padding: 10px;
-  font-size: 25px;
   font-weight: 600;
-  color: white;
-  text-shadow: 1px 1px black;
-  margin: 10px;
-}
-button {
-  width: 100%;
-}
-
-button:hover {
-  background-color: red;
+  h1 {
+    color: purple;
+    text-shadow: 2px 2px 5px white;
+    font-size: 57px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+  }
 }
 
 .main-div {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  margin: 20px;
+  height: 100%;
+  min-height: 750px;
   .side-div {
     width: 100%;
-    max-width: 350px;
+    height: 500px;
+    max-width: 287px;
     margin: 10px;
-    .keyboard {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      button {
-        cursor: pointer;
-        width: 30%;
-        background-color: darkgray;
-        color: white;
-        text-shadow: 1px 1px 1px black;
-        padding: 5px;
-        margin: 3px;
-        border-radius: 5px;
-        &:hover {
-          background-color: #67696d;
-        }
-        &.submit {
-          width: 100%;
-          background-color: #1fa6c0;
-          &:hover {
-            background-color: #008eff;
-          }
-        }
-      }
+    padding: 8px;
+    border-radius: 10px;
+    background: linear-gradient(-180deg, #494a4f, #7a0082);
+    border: 1px solid white;
+    box-shadow: 5px 5px 10px purple;
+    position: relative;
+    -webkit-animation: spin 4s ease-in-out 1s;
+    -moz-animation: spin 4s ease-in-out 1s;
+    animation: spin 4s ease-in-out 1s;
+    .alert {
+      padding: 0px;
+      margin-bottom: 1rem;
+      border: 1px solid transparent;
+      border-radius: 0 0 5px 5px;
+      position: absolute;
+      top: 237px;
+      left: 10px;
+      background-color: #fa8080;
+      z-index: 6;
     }
-    textarea {
-      text-align: right;
-      width: 100%;
-      margin: 2px;
-      height: 70px;
-      border: 1px solid gray;
-      border-radius: 6px;
-      outline: none;
-    }
-    .word-heading {
+    .suggestions {
+      padding-left: 3px;
+      margin-bottom: 1rem;
+      border: 1px solid transparent;
+      border-radius: 0 0 5px 5px;
+      position: absolute;
+      top: 237px;
+      left: 10px;
+      background-color: #c8c8c8;
+      width: 93%;
       text-align: left;
-      background-color: darkgray;
-      padding: 4px;
-      border-radius: 15px;
-      text-shadow: 1px 1px 1px white;
-      position: relative;
       img {
         width: 20px;
         position: absolute;
-        right: 8px;
-        top: 6px;
+        right: 3px;
+        top: 3px;
         border-radius: 50%;
         cursor: pointer;
         &:hover {
           background-color: white;
         }
       }
-      ul {
-        position: absolute;
-        top: 39px;
-        list-style: none;
-        li {
-          background-color: beige;
-          padding: 3px;
-          border-radius: 15px;
-          border: 1px solid;
-          margin-bottom: 1px;
+    }
+    .words {
+      background-color: #c8c8c8;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      padding: 3px;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 24px;
+      border-radius: 0 0 5px 5px;
+      z-index: 5;
+      border-bottom: 1px solid black;
+      box-shadow: 2px 2px 0px 0px;
+      span {
+        background-color: white;
+        padding: 2px 4px;
+        border-radius: 11px;
+        border: 1px solid black;
+        box-shadow: 1px 1px 2px black;
+        margin: 1px 3px;
+      }
+    }
+    .keyboard {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      button {
+        cursor: pointer;
+        width: 33%;
+        background-color: #c701ff;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        padding: 5px;
+        margin: 0px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 2px white;
+        font-size: 20px;
+        &:hover {
+          opacity: 0.7;
+        }
+        &.submit {
+          width: 100%;
+          margin-top: 5px;
+          font-size: 16px;
+        }
+        span {
+          font-size: 12px;
         }
       }
+      img {
+        width: 32px;
+        margin: 5px auto;
+      }
+    }
+    textarea {
+      text-align: left;
+      width: 100%;
+      margin: 2px auto;
+      height: 255px;
+      border: 1px solid gray;
+      border-radius: 6px;
+      outline: none;
+      font-size: 23px;
+      font-family: monospace;
+      padding: 10px;
     }
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotateY(360deg);
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotateY(360deg);
   }
-  to {
-    transform: rotate(360deg);
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
   }
 }

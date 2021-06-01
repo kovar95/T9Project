@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/kovar95/T9Project#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
     "chai": "^4.3.4",
     "chai-http": "^4.3.0",
     "combinatorics": "^0.1.0",

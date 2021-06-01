@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Header = () => <header>T9 predictive word</header>
+const Header = () => <header><h1>T9 predictive word</h1></header>
 
 export default Header;

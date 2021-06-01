@@ -1,31 +1,32 @@
 import React from 'react';
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  FormGroup,
-  Input,
-  Alert,
-} from 'reactstrap';
 import Keyboard from './Keyboard';
 import Words from './Words';
 import { connect } from 'react-redux';
 import * as actionCreators from '../store/ActionCreators';
+import PropTypes from 'prop-types';
 
-const Field = ({ data, alert, words: { realWords, allWords } }) => {
+const Field = ({ data, alert}) => {
   return (
     <div className="main-div">
       <div className="side-div">
         <textarea
-          placeholder="Write your word --->"
-          defaultValue={data}
+          placeholder="Welcome to T9 phoneword converter. Write your word to se the result --->"
+          value={data}
+          onChange={(e) => console.log(e.target.value)}
         />
+        {alert && <div className='alert'>{alert}</div>}
+        <Words/>
         <Keyboard />
       </div>
-      <Words/>
     </div>
   );
+};
+
+Field.propTypes = {
+  data: PropTypes.string.isRequired,
+  alert: PropTypes.string.isRequired ,
+  words: PropTypes.object.isRequired,
+  updateNumbers: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
