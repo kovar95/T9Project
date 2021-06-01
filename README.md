@@ -13,7 +13,27 @@ The frontend has validation, checking that the phone numbers are only integers (
 
 The backend is a documented, tested **API developed with NodeJS** that exposes an endpoint that given a number returns all the real phonewords for that number, it checks for valid numbers and possible errors.
 
-To run on your local machine, simply execute:
+## Application setup
+
+Clone project
+
+```
+git clone https://github.com/kovar95/T9Project.git
+```
+
+To install all dependencies run in root folder
+
+```
+npm install
+```
+
+Then go to `/client`, and again run
+
+```
+npm install
+```
+
+To run on your local machine,  simply execute from root folder:
 
 ```
 npm run start
